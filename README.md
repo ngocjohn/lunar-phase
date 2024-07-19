@@ -1,4 +1,4 @@
-# :moon: Lunar PhaseIntegration for Home Assistant
+# :moon: Lunar Phase Integration for Home Assistant
 
 ## Overview
 
