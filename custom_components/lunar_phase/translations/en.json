@@ -1,5 +1,5 @@
 {
-    "title": "Moon Phase",
+    "title": "Lunar Phase",
     "config": {
         "abort": {
             "already_configured": "Device is already configured"
