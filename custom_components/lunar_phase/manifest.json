@@ -1,16 +1,16 @@
 {
-  "name": "Lunar Phase",
   "domain": "lunar_phase",
-  "version": "0.1.0",
+  "name": "Lunar Phase",
   "codeowners": [
     "@ngocjohn"
   ],
-  "documentation": "https://github.com/ngocjohn/lunar-phase",
-  "issue_tracker": "https://github.com/ngocjohn/lunar-phase/issues",
-  "iot_class": "calculated",
   "config_flow": true,
   "dependencies": [],
+  "documentation": "https://github.com/ngocjohn/lunar-phase",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/ngocjohn/lunar-phase/issues",
   "requirements": [
     "ephem==4.1.5"
-  ]
+  ],
+  "version": "0.1.0"
 }
