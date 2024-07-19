@@ -1,7 +1,6 @@
 {
 	"name": "Lunar Phase",
 	"filename": "lunar_phase.zip",
-	"hide_default_branch": true,
 	"homeassistant": "2024.2.0",
 	"render_readme": true,
 	"zip_release": true
