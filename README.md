@@ -1,3 +1,5 @@
+[![HASSFEST](https://github.com/ngocjohn/lunar-phase/actions/workflows/hassfest.yaml/badge.svg)](https://github.com/ngocjohn/lunar-phase/actions/workflows/hassfest.yaml) ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/ngocjohn/lunar-phase/total?style=flat&logo=homeassistantcommunitystore&logoSize=auto&label=Downloads&color=%2318BCF2) ![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/ngocjohn/lunar-phase/latest/total?style=flat&logo=homeassistantcommunitystore&logoSize=auto)
+
 # 🌘 Lunar Phase Integration for Home Assistant
 
 The Lunar Phase integration is a custom component for Home Assistant that provides detailed information about the current phase of the moon. This integration leverages precise astronomical calculations to deliver accurate lunar data, making it a valuable addition for those interested in astronomy, astrology, or just tracking the moon's phases.
