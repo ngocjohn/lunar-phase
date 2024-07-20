@@ -92,7 +92,7 @@ class MoonUpdateCoordinator(DataUpdateCoordinator):
             )
         except UpdateFailed:
             _LOGGER.error("Error fetching moon phase data")
-
+        _LOGGER.debug("Moon phase: %s Attributes: %s", moon_phase, attributes)
         return {"moon_phase": moon_phase, "attributes": attributes}
 
     def get_moon_phase(self):
