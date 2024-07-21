@@ -92,7 +92,7 @@ class MoonUpdateCoordinator(DataUpdateCoordinator):
             )
         except UpdateFailed:
             _LOGGER.error("Error fetching moon phase data")
-        _LOGGER.debug("Location: %s", self.location)
+        _LOGGER.debug("Age: %s", attributes.get("age"))
         return {
             "moon_phase": moon_phase,
             "attributes": attributes,
