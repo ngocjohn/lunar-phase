@@ -160,6 +160,7 @@ class MoonPhaseSensor(CoordinatorEntity, SensorEntity):
             STATE_ATTR_NEXT_SET: attributes.get(STATE_ATTR_NEXT_SET),
             STATE_ATTR_NEXT_FULL: attributes.get(STATE_ATTR_NEXT_FULL),
             STATE_ATTR_NEXT_NEW: attributes.get(STATE_ATTR_NEXT_NEW),
+            "location": self.coordinator.location,
         }
 
 
