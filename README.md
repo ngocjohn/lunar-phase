@@ -2,7 +2,7 @@
 
 # 🌘 Lunar Phase Integration for Home Assistant
 
-<img src="assets/lunar-header.gif" style="border-radius: 8px" />
+<img src="https://raw.githubusercontent.com/ngocjohn/lunar-phase/main/assets/lunar-header.gif" style="border-radius: 8px" />
 
 ##
 
