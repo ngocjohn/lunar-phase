@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 [![HASSFEST](https://github.com/ngocjohn/lunar-phase/actions/workflows/hassfest.yaml/badge.svg)](https://github.com/ngocjohn/lunar-phase/actions/workflows/hassfest.yaml) ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/ngocjohn/lunar-phase/total?style=flat&logo=homeassistantcommunitystore&logoSize=auto&label=Downloads&color=%2318BCF2) ![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/ngocjohn/lunar-phase/latest/total?style=flat&logo=homeassistantcommunitystore&logoSize=auto)
 
 # 🌘 Lunar Phase Integration for Home Assistant
@@ -136,6 +138,12 @@ Once configured, the integration will add the Moon Phase sensor along with other
 
 Contributions are welcome! If you have any suggestions, issues, or feature requests, please open an issue or submit a pull request.
 
----
+##
 
 Enjoy tracking the lunar phases with the Lunar Phase integration for Home Assistant!
+
+&copy; 2024 Viet Ngoc
+
+[https://github.com/ngocjohn/](https://github.com/ngocjohn/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
