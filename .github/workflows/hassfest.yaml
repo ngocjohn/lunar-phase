@@ -2,6 +2,8 @@ name: Hassfest
 
 on:
   push:
+    tags:
+      - '*'
   pull_request:
   schedule:
     - cron: '0 0 * * *'
