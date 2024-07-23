@@ -18,8 +18,20 @@ The Lunar Phase integration is a custom component for Home Assistant that provid
   <img src="https://raw.githubusercontent.com/ngocjohn/lunar-phase/main/assets/lunar-entities.png" alt="Lunar Phase Entities" width="48%">
 </div>
 
+## Enhance Your Dashboard with a Beautiful Lunar Display
+
+> [!TIP]
+> If you're looking to add a visually appealing and informative lunar phase tracker to your Home Assistant dashboard, check out my custom Lunar Phase Card. This card provides detailed monthly phase information and integrates seamlessly with your existing setup. It's a great addition for anyone interested in astronomy or simply wanting to keep track of the moon's phases in a stylish way. You can find and install the Lunar Phase Card [here](https://github.com/ngocjohn/lunar-phase-card/).
+
+<div style="display: flex; justify-content: space-around;">
+  <img src="assets/lunar-default.png" alt="Lunar Phase Cards" width="48%" height="100%">
+  <img src="assets/lunar-compact.png" alt="Lunar Phase Calendar" width="48%" height="100%">
+</div>
+
+## Table of contents
+
 <details>
-    <summary>Table of Contents</summary>
+    <summary>Table of contents</summary>
 
 - [Overview](#overview)
 - [Features](#features)
