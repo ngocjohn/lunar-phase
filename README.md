@@ -2,7 +2,11 @@
 
 # 🌘 Lunar Phase Integration for Home Assistant
 
-The Lunar Phase integration is a custom component for Home Assistant that provides detailed information about the current phase of the moon. This integration leverages precise astronomical calculations to deliver accurate lunar data, making it a valuable addition for those interested in astronomy, astrology, or just tracking the moon's phases.
+<img src="assets/lunar-header.gif" style="border-radius: 8px" />
+
+##
+
+<p style="text-align: justify;">The Lunar Phase integration is a custom component for Home Assistant that provides detailed information about the current phase of the moon. This integration leverages precise astronomical calculations to deliver accurate lunar data, making it a valuable addition for those interested in astronomy, astrology, or just tracking the moon's phases.</p>
 
 ## Features
 
