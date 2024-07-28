@@ -7,7 +7,7 @@
         "error": {
             "cannot_connect": "Verbindung fehlgeschlagen",
             "invalid_auth": "Ungültige Authentifizierung ",
-            "unknown": "Unerwarteter Fehler",
+            "unknown": "Unbekannter Fehler",
             "city_not_found": "Stadt nicht gefunden"
         },
         "step": {
