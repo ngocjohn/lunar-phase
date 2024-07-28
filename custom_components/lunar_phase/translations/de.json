@@ -2,11 +2,11 @@
     "title": "Mondphasen",
     "config": {
         "abort": {
-            "already_configured": "Gerät ist bereits konfiguriert"
+            "already_configured": "GerÃ¤t ist bereits konfiguriert"
         },
         "error": {
             "cannot_connect": "Verbindung fehlgeschlagen",
-            "invalid_auth": "Ungültige Authentifizierung ",
+            "invalid_auth": "UngÃ¼ltige Authentifizierung ",
             "unknown": "Unerwarteter Fehler",
             "city_not_found": "Stadt nicht gefunden"
         },
@@ -15,7 +15,7 @@
                 "data": {
                     "city": "Stadt",
                     "latitude": "Breitengrad",
-                    "longitude": "Längengrad",
+                    "longitude": "LÃ¤ngengrad",
                     "region": "Region",
                     "time_zone": "Zeitzone"
                 }
