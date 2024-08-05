@@ -41,6 +41,9 @@
                     "waxing_crescent": "Dorůstající srpek",
                     "waxing_gibbous": "Dorůstající měsíc"
                 }
+            },
+            "moonrise": {
+                "name": "Východ měsíce"
             }
         }
     }
