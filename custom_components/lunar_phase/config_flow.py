@@ -77,7 +77,12 @@ async def create_location(hass: HomeAssistant, data: dict[str, Any]) -> Location
     longitude = data.get(CONF_LONGITUDE)
     timezone = data.get(CONF_TIME_ZONE)
 
-    return LocationInfo(city, region, timezone, latitude, longitude)
+    try:
+        location = LocationInfo(city, region, timezone, latitude, longitude)
+        _LOGGER.debug("Location: %s", location)
+    except Exception:
+        _LOGGER.exception("Unexpected exception: %s", Exception)
+    return location
 
 
 class ConfigFlow(ConfigFlow, domain=DOMAIN):
