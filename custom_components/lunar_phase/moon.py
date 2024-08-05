@@ -107,13 +107,21 @@ class MoonCalc:
         """Return the moon event time as a timestamp with timezone information."""
         event_time = self._moon_times.get(event)
         if event_time:
+            iso_time = event_time.isoformat()
+            time_replace = iso_time.replace(" ", "T")
+            time_utc = time_replace + "Z"
+            time_str = datetime.datetime.strptime(time_utc, "%Y-%m-%dT%H:%M:%S.%fZ")
+            time_replace = time_str.replace(tzinfo=datetime.UTC)
             _LOGGER.debug(
-                "Moon event time: %s raw: %s datime utc:%s",
+                "Moon event time: %s raw: %s timezone: %s iso: %s, str: %s, replace: %s",
                 event,
                 event_time,
-                event_time.replace(tzinfo=datetime.UTC),
+                time_replace,
+                time_utc,
+                time_str,
+                time_replace,
             )
-            return event_time.replace(tzinfo=datetime.UTC)
+            return time_replace
         return None
 
     def get_moon_phase_name(self):
@@ -137,6 +145,7 @@ class MoonCalc:
         next_obj = self._moon_illumination.get("next")
         phase_date_str = next_obj.get(phase).get("date")
         phase_date = datetime.datetime.strptime(phase_date_str, "%Y-%m-%dT%H:%M:%S.%fZ")
+        _LOGGER.debug("Next %s: %s, %s", phase, phase_date_str, phase_date)
         return phase_date.replace(tzinfo=datetime.UTC)
 
     def get_moon_illumination_fraction(self):
