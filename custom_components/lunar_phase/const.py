@@ -35,10 +35,12 @@ STATE_ATTR_NEXT_FIRST = "next_first_quarter"
 STATE_ATTR_ALTITUDE = "moon_altitude_deg"
 STATE_ATTR_AZIMUTH = "moon_azimuth_deg"
 STATE_ATTR_PARALLACTIC_ANGLE = "moon_parallactic_angle_deg"
+STATE_ATTR_NEXT_PHASE = "next_phase"
 
-EXTRA_ATTR_AZIMUTH = "moon_azimuth"
-EXTRA_ATTR_ALTITUDE = "moon_altitude"
+EXTRA_ATTR_AZIMUTH = "moon_azimuth_radians"
+EXTRA_ATTR_ALTITUDE = "moon_altitude_radians"
 EXTRA_ATTR_PARALLACTIC_ANGLE = "moon_parallactic_angle"
+EXTRA_ATTR_NEXT_PHASE = "next_phase_date"
 
 
 class BaseConfigFields(Enum):
@@ -210,5 +212,16 @@ BASE_LUNAR_SENSORS = {
         [EXTRA_ATTR_PARALLACTIC_ANGLE],
         2,
         None,
+    ],
+    STATE_ATTR_NEXT_PHASE: [
+        "Next Moon Phase",
+        STATE_ATTR_NEXT_PHASE,
+        "mdi:calendar-star",
+        SensorDeviceClass.ENUM,
+        None,
+        None,
+        [EXTRA_ATTR_NEXT_PHASE],
+        None,
+        EntityCategory.DIAGNOSTIC,
     ],
 }

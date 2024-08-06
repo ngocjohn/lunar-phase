@@ -258,13 +258,13 @@ class MoonScript:
                 "value": next,
                 "date": datetime.datetime.utcfromtimestamp(next / 1000).isoformat()
                 + "Z",
-                "type": "newMoon"
+                "type": "new_moon"
                 if next == nextNewMoon
-                else "firstQuarter"
+                else "first_quarter"
                 if next == nextFirstQuarter
-                else "fullMoon"
+                else "full_moon"
                 if next == nextFullMoon
-                else "thirdQuarter",
+                else "last_quarter",
                 "newMoon": {
                     "value": nextNewMoon,
                     "date": datetime.datetime.utcfromtimestamp(

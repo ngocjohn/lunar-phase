@@ -1,5 +1,7 @@
 """Sensor platform for the Moon Phase integration."""
 
+from __future__ import annotations
+
 import logging
 
 from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
@@ -56,7 +58,7 @@ async def async_setup_entry(
         )
 
     except Exception as err:
-        _LOGGER.error("Error setting up Lunar Phase sensor: %s", err, exc_info=True)
+        _LOGGER.error("Error setting up Lunar Phase sensor: %s", err, exc_info=True)  # noqa: G201
 
 
 class MainPhaseSensor(CoordinatorEntity[MoonUpdateCoordinator], SensorEntity):
@@ -80,9 +82,10 @@ class MainPhaseSensor(CoordinatorEntity[MoonUpdateCoordinator], SensorEntity):
         self, coordinator: MoonUpdateCoordinator, moon_calc: MoonCalc, config_entry
     ) -> None:
         """Initialize the sensor."""
-        super().__init__(coordinator)
-        self._moon_calc = moon_calc
+        super().__init__(coordinator, moon_calc)
         self._city = config_entry.data["city"]
+        self.moon_calc = moon_calc
+        self._attr_force_update = True
         self._attr_unique_id = f"{config_entry.entry_id}_moon_phase"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, config_entry.entry_id)},
@@ -115,9 +118,10 @@ class MainPhaseSensor(CoordinatorEntity[MoonUpdateCoordinator], SensorEntity):
     def extra_state_attributes(self):
         """Return the state attributes of the sensor."""
         attributes = self.coordinator.data.get("attributes", {})
-        location = self._moon_calc.location
+        location = self.moon_calc.location
         return {**attributes, "location": location}
 
+    @callback
     async def async_update(self):
         """Fetch new state data for the entity."""
         await self.coordinator.async_request_refresh()
@@ -142,10 +146,11 @@ class AttributeSensor(CoordinatorEntity[MoonUpdateCoordinator], SensorEntity):
         self._config_entry = sensor_config
         self._internal_name = internal_name
         self._city = entry.data[CONF_CITY]
-        self._attr_name = self._config_entry[0]
-        self._attr_unique_id = f"{entry.entry_id}_{self._internal_name}"
         self._state_key = self._config_entry[1]
         self._extra_state_keys = self._config_entry[6]
+        self._attr_force_update = True
+        self._attr_name = self._config_entry[0]
+        self._attr_unique_id = f"{entry.entry_id}_{self._internal_name}"
         self._attr_translation_key = self._config_entry[1]
         self._attr_icon = self._config_entry[2]
         self._attr_device_class = self._config_entry[3]
@@ -201,6 +206,7 @@ class AttributeSensor(CoordinatorEntity[MoonUpdateCoordinator], SensorEntity):
         attributes = self.coordinator.data.get("attributes", {})
         return attributes.get(self._state_key)
 
+    @callback
     async def async_update(self):
         """Fetch new state data for the entity."""
 

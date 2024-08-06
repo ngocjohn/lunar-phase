@@ -42,16 +42,12 @@
 					"waxing_gibbous": "Waxing gibbous"
 				}
 			},
-			"moonrise": {
-				"name": "Moonrise"
-			}
-		}
-	},
-	"entity_component": {
-		"_": {
-			"state_attributes": {
-				"moon_age": {
-					"name": "Moon vek"
+			"next_phase": {
+				"state": {
+					"first_quarter": "First quarter",
+					"full_moon": "Full moon",
+					"last_quarter": "Last quarter",
+					"new_moon": "New moon"
 				}
 			}
 		}
