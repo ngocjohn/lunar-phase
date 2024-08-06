@@ -42,8 +42,13 @@
                     "waxing_gibbous": "Dorůstající měsíc"
                 }
             },
-            "moonrise": {
-                "name": "Východ měsíce"
+            "next_phase": {
+                "state": {
+                    "first_quarter": "První čtvrť",
+                    "full_moon": "Úplněk",
+                    "last_quarter": "Poslední čtvrť",
+                    "new_moon": "Novoluní"
+                }
             }
         }
     }

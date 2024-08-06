@@ -41,6 +41,14 @@
                     "waxing_crescent": "Zunehmender Sichelmond",
                     "waxing_gibbous": "Zunehmender Dreiviertelmond"
                 }
+            },
+            "next_phase": {
+                "state": {
+                    "first_quarter": "Zunehmender Mond",
+                    "full_moon": "Vollmond",
+                    "last_quarter": "Zunehmender Dreiviertelmond",
+                    "new_moon": "Neumond"
+                }
             }
         }
     }

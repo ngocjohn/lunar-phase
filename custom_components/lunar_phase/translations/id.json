@@ -41,6 +41,14 @@
                     "waxing_crescent": "Bulan Sabit awal",
                     "waxing_gibbous": "Bulan Cembung awal"
                 }
+            },
+            "next_phase": {
+                "state": {
+                    "first_quarter": "Bulan Paruh awal",
+                    "full_moon": "Bulan Purnama",
+                    "last_quarter": "Bulan Paruh akhir",
+                    "new_moon": "Bulan Baru"
+                }
             }
         }
     }
