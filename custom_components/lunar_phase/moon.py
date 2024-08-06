@@ -58,10 +58,8 @@ class MoonCalc:
         self._timezone = timezone
         self.today = dt_util.now().replace(tzinfo=tz.UTC)
         self.date = datetime.datetime.now()
-        self.moon_ephem = ephem.Moon()
         self.observer = ephem.Observer()
         self.location = None
-        self.observer.date = self.date
         self._phase_name = None
         self._moon_attributes = {}
         self._moon_position = {}
