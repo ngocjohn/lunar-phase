@@ -12,17 +12,17 @@
 
 ## Features
 
-- **Moon Phase Sensor**: Displays the current phase of the moon (e.g., New Moon, Waxing Crescent, First Quarter, etc.).
+- **Current Moon Phase**: Displays the current phase of the moon.
 - **Moon Age**: Shows the age of the moon in days.
 - **Distance to Moon**: Provides the distance to the moon in kilometers.
 - **Illumination Fraction**: Indicates the fraction of the moon that is illuminated.
 - **Moon Rise and Set Times**: Displays the moon rise and set times.
-- **Next New and Full Moon**: Provides the dates for the next new moon and full moon.
+- **Next Key Phases**: Provides dates for the next new moon, full moon, first quarter, and third quarter.
+- **Moon Position**: Provides altitude, azimuth, and parallactic angle of the moon.
+- **Next Moon High**: Indicates the time of the next moon high position.
 
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://raw.githubusercontent.com/ngocjohn/lunar-phase/main/assets/lunar-phase.png" alt="Lunar Phase Sensor Attributes" width="48%">
-  <img src="https://raw.githubusercontent.com/ngocjohn/lunar-phase/main/assets/lunar-entities.png" alt="Lunar Phase Entities" width="48%">
-</div>
+  <img src="https://raw.githubusercontent.com/ngocjohn/lunar-phase/main/assets/lunar-entities.png" alt="Lunar Phase Entities">
+  <img src="https://raw.githubusercontent.com/ngocjohn/lunar-phase/main/assets/lunar-phase.png" alt="Lunar Phase Sensor Attributes">
 
 ## Enhance Your Dashboard with a Beautiful Lunar Display
 
@@ -47,12 +47,6 @@
 - [Configuration](#configuration)
   - [Using the Home Assistant UI](#using-the-home-assistant-ui)
 - [Sensor Details](#sensor-details)
-  - [Moon Phase Sensor](#moon-phase-sensor)
-  - [Moon Age Sensor](#moon-age-sensor)
-  - [Moon Distance Sensors](#moon-distance-sensors)
-  - [Moon Illumination Fraction Sensor](#moon-illumination-fraction-sensor)
-  - [Moon Rise and Set Sensors](#moon-rise-and-set-sensors)
-  - [Next Full and New Moon Sensors](#next-full-and-new-moon-sensors)
 - [Contribution](#contribution)
 
 </details>
@@ -93,46 +87,22 @@ Once configured, the integration will add the Moon Phase sensor along with other
 
 ## Sensor Details
 
-### Moon Phase Sensor
-
-- **Name**: Moon Phase
-- **Attributes**:
-  - `age`: The age of the moon in days.
-  - `distance_km`: The distance to the moon in kilometers.
-  - `illumination_fraction`: The fraction of the moon that is illuminated.
-  - `moon_rise`: The moon rise time.
-  - `moon_set`: The moon set time.
-  - `next_full`: The next full moon date.
-  - `next_new`: The next new moon date.
-
-### Moon Age Sensor
-
-- **Name**: Moon Age
-- **Unit**: days
-
-### Moon Distance Sensors
-
-- **Name**: Moon Distance
-- **Unit**: km
-
-### Moon Illumination Fraction Sensor
-
-- **Name**: Moon Illumination Fraction
-- **Unit**: %
-
-### Moon Rise and Set Sensors
-
-- **Name**: Moon Rise
-- **Device Class**: timestamp
-- **Name**: Moon Set
-- **Device Class**: timestamp
-
-### Next Full and New Moon Sensors
-
-- **Name**: Next Full Moon
-- **Device Class**: timestamp
-- **Name**: Next New Moon
-- **Device Class**: timestamp
+| **Name**                         | **Description**                                                                                |
+| -------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `Moon Phase`                     | Displays the current phase of the moon (e.g., New Moon, Waxing Crescent, First Quarter, etc.). |
+| `Moon Age`                       | Shows the age of the moon in days.                                                             |
+| `Moon Distance`                  | Provides the distance to the moon in kilometers.                                               |
+| `Moon Illumination Fraction`     | Indicates the fraction of the moon that is illuminated.                                        |
+| `Moon Rise, Moon Set, Moon High` | Displays the moon rise, set and highest times.                                                 |
+| `Next Full Moon`                 | Provides the date for the next full moon.                                                      |
+| `Next New Moon`                  | Provides the date for the next new moon.                                                       |
+| `Next Third Quarter`             | Provides the date for the next third quarter moon phase.                                       |
+| `Next First Quarter`             | Provides the date for the next first quarter moon phase.                                       |
+| `Moon High`                      | Provides the time of the next moon high position.                                              |
+| `Moon Altitude`                  | Provides the altitude of the moon in degrees.                                                  |
+| `Moon Azimuth`                   | Provides the azimuth of the moon in degrees.                                                   |
+| `Moon Parallactic Angle`         | Provides the parallactic angle of the moon in degrees.                                         |
+| `Next Moon Phase`                | Provides the next moon phase and its date.                                                     |
 
 ## Contribution
 
