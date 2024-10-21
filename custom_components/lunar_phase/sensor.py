@@ -54,7 +54,7 @@ async def async_setup_entry(
         async_add_entities(sensors, True)
 
         _LOGGER.debug(
-            "Successfully set up Lunar Phase sensor entry: %s", entry.data["city"]
+            "Successfully set up Lunar Phase sensor entry: %s", sensors[0].name
         )
 
     except Exception as err:
@@ -97,7 +97,24 @@ class MainPhaseSensor(CoordinatorEntity[MoonUpdateCoordinator], SensorEntity):
     @callback
     def _handle_coordinator_update(self) -> None:
         """Update sensor with latest data from coordinator."""
+        self._attr_native_value = self.coordinator.data.get("moon_phase")
+        attributes = self.coordinator.data.get("attributes", {})
+        location = self.moon_calc.location
+        self._attr_extra_state_attributes = (
+            {
+                **attributes,
+                "location": location,
+            }
+            if location
+            else attributes
+        )
         self.async_write_ha_state()
+        # _LOGGER.debug(
+        #     "Updated %s sensor, new state: %s, attributes: %s",
+        #     self.name,
+        #     self._attr_native_value,
+        #     self._attr_extra_state_attributes,
+        # )
 
     @property
     def unique_id(self):
@@ -113,18 +130,6 @@ class MainPhaseSensor(CoordinatorEntity[MoonUpdateCoordinator], SensorEntity):
     def native_value(self):
         """Return the state of the sensor."""
         return self.coordinator.data.get("moon_phase")
-
-    @property
-    def extra_state_attributes(self):
-        """Return the state attributes of the sensor."""
-        attributes = self.coordinator.data.get("attributes", {})
-        location = self.moon_calc.location
-        return {**attributes, "location": location}
-
-    @callback
-    async def async_update(self):
-        """Fetch new state data for the entity."""
-        await self.coordinator.async_request_refresh()
 
 
 class AttributeSensor(CoordinatorEntity[MoonUpdateCoordinator], SensorEntity):
@@ -169,6 +174,9 @@ class AttributeSensor(CoordinatorEntity[MoonUpdateCoordinator], SensorEntity):
     @callback
     def _handle_coordinator_update(self) -> None:
         """Update sensor with latest data from coordinator."""
+        self._attr_state = self.native_value
+        self._attr_native_value = self.native_value
+        self._attr_extra_state_attributes = self.extra_state_attributes
         self.async_write_ha_state()
 
     @property
@@ -205,9 +213,3 @@ class AttributeSensor(CoordinatorEntity[MoonUpdateCoordinator], SensorEntity):
         """Return the state of the sensor."""
         attributes = self.coordinator.data.get("attributes", {})
         return attributes.get(self._state_key)
-
-    @callback
-    async def async_update(self):
-        """Fetch new state data for the entity."""
-
-        await self.coordinator.async_request_refresh()

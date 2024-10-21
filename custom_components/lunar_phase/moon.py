@@ -89,7 +89,7 @@ class MoonCalc:
     def get_moon_illumination(self):
         """Return the moon illumination."""
         self._moon_illumination = MoonScript.get_moon_illumination(self.today)
-        _LOGGER.debug("Moon illumination: %s", self._moon_illumination)
+        # _LOGGER.debug("Moon illumination: %s", self._moon_illumination)
         return self._moon_illumination
 
     def get_moon_times(self):
@@ -144,12 +144,12 @@ class MoonCalc:
         """Return the next type of moon phase."""
         next_obj = self._moon_illumination.get("next")
         if not next_obj:
-            return None
+            return
         next_phase = next_obj.get("type")
         next_date_str = next_obj.get("date")
         next_date = datetime.datetime.strptime(next_date_str, "%Y-%m-%dT%H:%M:%S.%fZ")
         self._moon_next_phase = {"type": next_phase, "date": next_date}
-        _LOGGER.debug("Next moon phase: %s", self._moon_next_phase)
+        # _LOGGER.debug("Next moon phase: %s", self._moon_next_phase)
 
     def get_moon_attributes(self):
         """Return the moon attributes."""
