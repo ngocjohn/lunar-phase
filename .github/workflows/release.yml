@@ -16,7 +16,8 @@ jobs:
       - name: Zip component
         run: |
           mkdir -p dist
-          zip -r dist/lunar_phase.zip custom_components/lunar_phase
+          cd custom_components/lunar_phase
+          zip -r ../../dist/lunar_phase.zip .
 
       - name: Release
         uses: softprops/action-gh-release@v2
