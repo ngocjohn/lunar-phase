@@ -131,7 +131,8 @@ class MoonCalc:
         next_obj = self._moon_illumination.get("next")
         phase_date_str = next_obj.get(phase).get("date")
         phase_date = datetime.datetime.strptime(phase_date_str, "%Y-%m-%dT%H:%M:%S.%fZ")
-        return phase_date.replace(tzinfo=datetime.UTC)
+        # keep timezone handling consistent with dateutil.tz used elsewhere
+        return phase_date.replace(tzinfo=tz.UTC)
 
     def get_moon_illumination_fraction(self):
         """Return the fraction of the moon that is illuminated."""
@@ -148,6 +149,8 @@ class MoonCalc:
         next_phase = next_obj.get("type")
         next_date_str = next_obj.get("date")
         next_date = datetime.datetime.strptime(next_date_str, "%Y-%m-%dT%H:%M:%S.%fZ")
+        # Ensure the next phase date is timezone-aware (UTC)
+        next_date = next_date.replace(tzinfo=tz.UTC)
         self._moon_next_phase = {"type": next_phase, "date": next_date}
         # _LOGGER.debug("Next moon phase: %s", self._moon_next_phase)
 
