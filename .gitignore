@@ -169,3 +169,5 @@ dist/
 .devcontainer/
 Dockerfile.dev
 Dockerfile
+script/
+
