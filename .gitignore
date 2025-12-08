@@ -164,3 +164,8 @@ cython_debug/
 .DS_Store
 .vscode/
 dist/
+.devcontainer/
+.dockerignore
+.devcontainer/
+Dockerfile.dev
+Dockerfile
