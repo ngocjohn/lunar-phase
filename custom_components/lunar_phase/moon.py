@@ -186,8 +186,10 @@ class MoonCalc:
 
     def update(self):
         """Update the MoonCalc object."""
+        # Update date variables before moon sensors update
         self.update_date_variables()
         
+        # Proceed with moon data calculations
         self.get_moon_illumination()
         self.get_moon_position()
         self.get_moon_times()
