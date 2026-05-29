@@ -107,6 +107,8 @@ class MoonCalc:
     def get_event_time(self, event):
         """Return the event time as a timestamp with timezone information."""
         event_time = self._moon_times.get(event)
+        if event_time is None:
+            return None
         config_timezone = tz.gettz(self.location.timezone)
         return event_time.astimezone(config_timezone)
 
