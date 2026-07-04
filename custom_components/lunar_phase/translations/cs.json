@@ -2,7 +2,7 @@
     "title": "Lunar Phase",
     "config": {
         "abort": {
-            "already_configured": "Zařízení je již nakonfigurováno"
+            "already_configured": "Integrace je již nakonfigurována"
         },
         "error": {
             "cannot_connect": "Nepodařilo se připojit",

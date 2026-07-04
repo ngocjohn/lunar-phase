@@ -2,7 +2,7 @@
     "title": "Lunar Phase",
     "config": {
         "abort": {
-            "already_configured": "Perangkat sudah dikonfigurasi"
+            "already_configured": "Integrasi sudah dikonfigurasi"
         },
         "error": {
             "cannot_connect": "Gagal terhubung",

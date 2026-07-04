@@ -1,7 +1,7 @@
 {
     "config": {
         "abort": {
-            "already_configured": "Appareil déjà configuré"
+            "already_configured": "Intégration déjà configurée"
         },
         "error": {
             "cannot_connect": "Impossible de se connecter",
