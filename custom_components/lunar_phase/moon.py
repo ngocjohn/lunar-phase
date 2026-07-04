@@ -56,8 +56,7 @@ class MoonCalc:
         self._latitude = latitude
         self._longitude = longitude
         self._timezone = timezone
-        self.today = dt_util.now().replace(tzinfo=tz.UTC)
-        self.date = datetime.datetime.now()
+        self.update_date_variables()
         self.observer = ephem.Observer()
         self.location = None
         self._phase_name = None
@@ -189,7 +188,19 @@ class MoonCalc:
 
     def update(self):
         """Update the MoonCalc object."""
+        # Update date variables before moon sensors update
+        self.update_date_variables()
+        
+        # Proceed with moon data calculations
         self.get_moon_illumination()
         self.get_moon_position()
         self.get_moon_times()
         self.get_next_type_phase()
+
+    def update_date_variables(self):
+        """Set the current date to the relevant variables."""
+        self.today = dt_util.now().replace(tzinfo=tz.UTC)
+        self.date = datetime.datetime.now()
+
+        if hasattr(self, "observer") and self.observer is not None:
+            self.observer.date = self.today
