@@ -41,6 +41,9 @@
                     "last_quarter": "Poslední čtvrť",
                     "new_moon": "Novoluní"
                 }
+            },
+            "moon_illuminance": {
+                "name": "Měsíční osvětlenost"
             }
         }
     }

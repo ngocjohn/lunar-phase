@@ -2,6 +2,7 @@
 
 import datetime
 import logging
+import math
 
 from astral import LocationInfo
 from dateutil import tz
@@ -19,6 +20,7 @@ from .const import (
     STATE_ATTR_ALTITUDE,
     STATE_ATTR_AZIMUTH,
     STATE_ATTR_DISTANCE_KM,
+    STATE_ATTR_ILLUMINANCE,
     STATE_ATTR_ILLUMINATION_FRACTION,
     STATE_ATTR_NEXT_FIRST,
     STATE_ATTR_NEXT_FULL,
@@ -141,6 +143,21 @@ class MoonCalc:
             return fraction * 100
         return None
 
+    def get_moon_illuminance(self):
+        """Return estimated moonlight illuminance in lux (Krisciunas-Schaefer model)."""
+        fraction = self._moon_illumination.get("fraction")
+        altitude_deg = self._moon_position.get("altitudeDegrees")
+        distance = self._moon_position.get("distance")
+        if fraction is None or altitude_deg is None or not distance:
+            return None
+        zenith_angle = math.radians(90.0 - altitude_deg)
+        cos_z = math.cos(zenith_angle)
+        if cos_z <= 0:
+            return 0.0
+        avg_distance = 384400.0
+        # E0 = 0.25 lux — full moon at zenith at average distance
+        return round(0.25 * fraction * cos_z * (avg_distance / distance) ** 2, 6)
+
     def get_next_type_phase(self):
         """Return the next type of moon phase."""
         next_obj = self._moon_illumination.get("next")
@@ -164,6 +181,7 @@ class MoonCalc:
                 "parallacticAngleDegrees"
             ),
             STATE_ATTR_ILLUMINATION_FRACTION: self.get_moon_illumination_fraction(),
+            STATE_ATTR_ILLUMINANCE: self.get_moon_illuminance(),
             STATE_ATTR_NEXT_FULL: self.get_next_moon_phase("fullMoon"),
             STATE_ATTR_NEXT_NEW: self.get_next_moon_phase("newMoon"),
             STATE_ATTR_NEXT_THIRD: self.get_next_moon_phase("thirdQuarter"),

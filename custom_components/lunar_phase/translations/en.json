@@ -40,6 +40,9 @@
                     "last_quarter": "Last quarter",
                     "new_moon": "New moon"
                 }
+            },
+            "moon_illuminance": {
+                "name": "Moon Illuminance"
             }
         }
     },

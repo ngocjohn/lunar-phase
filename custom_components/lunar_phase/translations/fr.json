@@ -40,6 +40,9 @@
                     "last_quarter": "Dernier quartier",
                     "new_moon": "Nouvelle lune"
                 }
+            },
+            "moon_illuminance": {
+                "name": "Éclairement lunaire"
             }
         }
     },

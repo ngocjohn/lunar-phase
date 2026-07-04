@@ -41,6 +41,9 @@
                     "last_quarter": "Abnehmender Halbmond",
                     "new_moon": "Neumond"
                 }
+            },
+            "moon_illuminance": {
+                "name": "Mondbeleuchtungsstärke"
             }
         }
     }
