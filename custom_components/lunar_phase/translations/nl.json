@@ -40,6 +40,9 @@
                     "last_quarter": "Laatste kwartier",
                     "new_moon": "Nieuwe maan"
                 }
+            },
+            "moon_illuminance": {
+                "name": "Maanverlichtingssterkte"
             }
         }
     },

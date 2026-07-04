@@ -41,6 +41,9 @@
                     "last_quarter": "Bulan Paruh akhir",
                     "new_moon": "Bulan Baru"
                 }
+            },
+            "moon_illuminance": {
+                "name": "Iluminansi Bulan"
             }
         }
     }
