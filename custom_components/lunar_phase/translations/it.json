@@ -16,7 +16,7 @@
           "latitude": "Latitudine",
           "longitude": "Longitudine",
           "region": "Regione",
-          "time_zone": "Timezone"
+          "time_zone": "Fuso orario"
         }
       },
       "user": {
