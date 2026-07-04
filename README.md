@@ -16,8 +16,9 @@
 - **Moon Age**: Shows the age of the moon in days.
 - **Distance to Moon**: Provides the distance to the moon in kilometers.
 - **Illumination Fraction**: Indicates the fraction of the moon that is illuminated.
+- **Moon Illuminance**: Estimated moonlight illuminance in lux (Krisciunas-Schaefer model).
 - **Moon Rise and Set Times**: Displays the moon rise and set times.
-- **Next Key Phases**: Provides dates for the next new moon, full moon, first quarter, and third quarter.
+- **Next Key Phases**: Provides the date and time of the next new moon, full moon, first quarter, and third quarter.
 - **Moon Position**: Provides altitude, azimuth, and parallactic angle of the moon.
 - **Next Moon High**: Indicates the time of the next moon high position.
 
@@ -39,7 +40,6 @@
 <details>
     <summary>Table of contents</summary>
 
-- [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
   - [HACS Installation](#hacs-installation)
@@ -76,12 +76,12 @@ To configure the Lunar Phase integration, follow these steps:
 1. Go to the Home Assistant dashboard.
 2. Navigate to `Configuration` > `Devices & Services` > `Add Integration`.
 3. Search for `Lunar Phase` and select it.
-4. You will be prompted to enter the city for your location.
-   - **City**: Enter the name of your city. If the city is not found in the database, you will be prompted to provide additional information:
-     - **Region**: The region or state where the city is located.
-     - **Timezone**: The timezone of the city.
-     - **Latitude**: The latitude coordinate of the city.
-     - **Longitude**: The longitude coordinate of the city.
+4. A single form appears pre-filled with your HA home location details. Edit any field if needed, then submit:
+   - **Location Name** — defaults to your HA `location_name`, free-text label.
+   - **Latitude** — pre-filled from your HA home coordinates, editable.
+   - **Longitude** — pre-filled from your HA home coordinates, editable.
+
+   Region and timezone are inferred automatically from HA settings and are not shown.
 
 Once configured, the integration will add the Moon Phase sensor along with other diagnostic sensors that provide detailed lunar information.
 
@@ -93,12 +93,14 @@ Once configured, the integration will add the Moon Phase sensor along with other
 | `Moon Age`                       | Shows the age of the moon in days.                                                             |
 | `Moon Distance`                  | Provides the distance to the moon in kilometers.                                               |
 | `Moon Illumination Fraction`     | Indicates the fraction of the moon that is illuminated.                                        |
-| `Moon Rise, Moon Set, Moon High` | Displays the moon rise, set and highest times.                                                 |
+| `Moon Illuminance`               | Estimated moonlight illuminance in lux; returns 0.0 when moon is below the horizon.           |
+| `Moon Rise`                      | Displays the time of the next moonrise.                                                        |
+| `Moon Set`                       | Displays the time of the next moonset.                                                         |
+| `Moon High`                      | Provides the time of the next moon high position.                                              |
 | `Next Full Moon`                 | Provides the date for the next full moon.                                                      |
 | `Next New Moon`                  | Provides the date for the next new moon.                                                       |
 | `Next Third Quarter`             | Provides the date for the next third quarter moon phase.                                       |
 | `Next First Quarter`             | Provides the date for the next first quarter moon phase.                                       |
-| `Moon High`                      | Provides the time of the next moon high position.                                              |
 | `Moon Altitude`                  | Provides the altitude of the moon in degrees.                                                  |
 | `Moon Azimuth`                   | Provides the azimuth of the moon in degrees.                                                   |
 | `Moon Parallactic Angle`         | Provides the parallactic angle of the moon in degrees.                                         |
@@ -108,11 +110,16 @@ Once configured, the integration will add the Moon Phase sensor along with other
 
 Contributions are welcome! If you have any suggestions, issues, or feature requests, please open an issue or submit a pull request.
 
+### Contributors
+
+- [@ngocjohn](https://github.com/ngocjohn) — original author
+- [@italo-lombardi](https://github.com/italo-lombardi) — v0.3.0 improvements
+
 ##
 
 Enjoy tracking the lunar phases with the Lunar Phase integration for Home Assistant!
 
-&copy; 2024 Viet Ngoc
+&copy; 2024–2026 Viet Ngoc
 
 [https://github.com/ngocjohn/](https://github.com/ngocjohn/)
 
