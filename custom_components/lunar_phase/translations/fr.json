@@ -5,7 +5,6 @@
         },
         "error": {
             "cannot_connect": "Impossible de se connecter",
-            "city_not_found": "Ville non trouvée",
             "invalid_auth": "Authentification invalide",
             "unknown": "Erreur inattendue"
         },
@@ -14,14 +13,7 @@
                 "data": {
                     "city": "Ville",
                     "latitude": "Latitude",
-                    "longitude": "Longitude",
-                    "region": "Région",
-                    "time_zone": "Fuseau horaire"
-                }
-            },
-            "user": {
-                "data": {
-                    "city": "Ville"
+                    "longitude": "Longitude"
                 }
             }
         }

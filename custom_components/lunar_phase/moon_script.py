@@ -224,10 +224,12 @@ class MoonScript:
         fraction = (1 + math.cos(inc)) / 2
 
         # use ephem for accurate next phase times (linear arithmetic is off by hours)
-        nextNewMoon = ephem.next_new_moon(date).datetime().timestamp() * 1000
-        nextFullMoon = ephem.next_full_moon(date).datetime().timestamp() * 1000
-        nextFirstQuarter = ephem.next_first_quarter_moon(date).datetime().timestamp() * 1000
-        nextThirdQuarter = ephem.next_last_quarter_moon(date).datetime().timestamp() * 1000
+        # ephem.*.datetime() returns naive UTC; replace tzinfo before calling .timestamp()
+        _utc = datetime.timezone.utc
+        nextNewMoon = ephem.next_new_moon(date).datetime().replace(tzinfo=_utc).timestamp() * 1000
+        nextFullMoon = ephem.next_full_moon(date).datetime().replace(tzinfo=_utc).timestamp() * 1000
+        nextFirstQuarter = ephem.next_first_quarter_moon(date).datetime().replace(tzinfo=_utc).timestamp() * 1000
+        nextThirdQuarter = ephem.next_last_quarter_moon(date).datetime().replace(tzinfo=_utc).timestamp() * 1000
 
         next = min(nextNewMoon, nextFirstQuarter, nextFullMoon, nextThirdQuarter)
 

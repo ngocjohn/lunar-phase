@@ -5,7 +5,6 @@
         },
         "error": {
             "cannot_connect": "Geen verbinding",
-            "city_not_found": "Stad niet gevonden",
             "invalid_auth": "Ongeldige authenticatie",
             "unknown": "Onverwachte fout"
         },
@@ -14,14 +13,7 @@
                 "data": {
                     "city": "Stad",
                     "latitude": "Lengtegraad",
-                    "longitude": "Breedtegraad",
-                    "region": "Regio",
-                    "time_zone": "Tijdzone"
-                }
-            },
-            "user": {
-                "data": {
-                    "city": "Stad"
+                    "longitude": "Breedtegraad"
                 }
             }
         }
