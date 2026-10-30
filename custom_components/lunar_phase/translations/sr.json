@@ -24,19 +24,19 @@
         "name": "Месечева фаза",
         "state": {
           "first_quarter": "Прва четврт",
-          "full_moon": "Уштап / Пун месец",
-          "last_quarter": "Poslednja četvrt",
+          "full_moon": "Пун месец",
+          "last_quarter": "Последња четврт",
           "new_moon": "Млад месец",
-          "waning_crescent": "Узмицајући срп / Стари месец",
-          "waning_gibbous": "Узмицајући месец",
-          "waxing_crescent": "Растући срп / Млад месец у расту",
+          "waning_crescent": "Опадајући срп",
+          "waning_gibbous": "Опадајући месец",
+          "waxing_crescent": "Растући срп",
           "waxing_gibbous": "Растући месец"
         }
       },
       "next_phase": {
         "state": {
           "first_quarter": "Прва четврт",
-          "full_moon": "Уштап / Пун месец",
+          "full_moon": "Пун месец",
           "last_quarter": "Последња четврт",
           "new_moon": "Млад месец"
         }
