@@ -1,0 +1,50 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Интеграција је већ подешена"
+    },
+    "error": {
+      "cannot_connect": "Повезивање није успело",
+      "invalid_auth": "Неважећа аутентификација",
+      "unknown": "Неочекивана грешка"
+    },
+    "step": {
+      "location": {
+        "data": {
+          "city": "Град",
+          "latitude": "Географска ширина",
+          "longitude": "Географска дужина"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "moon_phase": {
+        "name": "Месечева фаза",
+        "state": {
+          "first_quarter": "Прва четврт",
+          "full_moon": "Пун месец",
+          "last_quarter": "Последња четврт",
+          "new_moon": "Млад месец",
+          "waning_crescent": "Опадајући срп",
+          "waning_gibbous": "Опадајући месец",
+          "waxing_crescent": "Растући срп",
+          "waxing_gibbous": "Растући месец"
+        }
+      },
+      "next_phase": {
+        "state": {
+          "first_quarter": "Прва четврт",
+          "full_moon": "Пун месец",
+          "last_quarter": "Последња четврт",
+          "new_moon": "Млад месец"
+        }
+      },
+      "moon_illuminance": {
+        "name": "Осветљеност месеца"
+      }
+    }
+  },
+  "title": "Месечеве фазе"
+}

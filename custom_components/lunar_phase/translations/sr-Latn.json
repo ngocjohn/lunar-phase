@@ -1,0 +1,50 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Integracija je već podešena"
+    },
+    "error": {
+      "cannot_connect": "Povezivanje nije uspelo",
+      "invalid_auth": "Nevažeća autentifikacija",
+      "unknown": "Neočekivana greška"
+    },
+    "step": {
+      "location": {
+        "data": {
+          "city": "Grad",
+          "latitude": "Geografska širina",
+          "longitude": "Geografska dužina"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "moon_phase": {
+        "name": "Mesečeva faza",
+        "state": {
+          "first_quarter": "Prva četvrt",
+          "full_moon": "Pun mesec",
+          "last_quarter": "Poslednja četvrt",
+          "new_moon": "Mlad mesec",
+          "waning_crescent": "Opadajući srp",
+          "waning_gibbous": "Opadajući mesec",
+          "waxing_crescent": "Rastući srp",
+          "waxing_gibbous": "Rastući mesec"
+        }
+      },
+      "next_phase": {
+        "state": {
+          "first_quarter": "Prva četvrt",
+          "full_moon": "Pun mesec",
+          "last_quarter": "Poslednja četvrt",
+          "new_moon": "Mlad mesec"
+        }
+      },
+      "moon_illuminance": {
+        "name": "Osvetljenost meseca"
+      }
+    }
+  },
+  "title": "Mesečeve faze"
+}
